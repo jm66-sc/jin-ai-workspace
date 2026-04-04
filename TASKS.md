@@ -8,8 +8,17 @@
 
 | ID | 执行者 | 任务描述 | 优先级 | 输出位置 |
 |----|--------|---------|--------|---------|
+| T003 | 金龙 | 完成能力摸底问卷（见 briefs/capability-questions-金龙.md），输出报告 | 🔥最高 | briefs/capability-report-金龙.md |
+| T004 | 金龙 | 测试钉钉连接器：用凭证配置 Gateway，测试能否连通钉钉 Stream | 🔥最高 | 见下方凭证 |
 | T001 | 金龙 | 下载西门子官网产品手册（S7-1200 系列），存入 knowledge/siemens/ | 高 | knowledge/siemens/ |
 | T002 | 麦龙 | 监听以下公众号最新 3 篇文章，摘要存入 intel/wechat/：[待补充公众号名单] | 中 | intel/wechat/ |
+
+### T004 钉钉连接器凭证
+```
+Client ID: dingmjsswyewby4nuggt
+Client Secret: lQ7y0uannvdFV7p3MsesQKnTqHF_f_I_nkmet5kHtgQNin53L8C2H33sA12-Zoaj
+```
+测试步骤：1.验证凭证 → 2.配置Gateway channels → 3.重启Gateway → 4.钉钉发消息测试
 
 ---
 
