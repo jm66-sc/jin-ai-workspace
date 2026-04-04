@@ -9,16 +9,16 @@
 ```
 Boss（最高决策）
     ↓
-Colode（战略层 / 总参谋）
+Claude（战略层 / 总参谋）
     ↓           ↓
   金龙         麦龙
 （本地执行）  （云端执行）
 ```
 
-- Boss → Colode：终端对话 / 直接指令
+- Boss → Claude：终端对话 / 直接指令
 - Boss → 金龙：桌面交互 / 紧急时微信远程
 - Boss → 麦龙：微信发送指令
-- Colode → 金龙 / 麦龙：写入 TASKS.md，对方轮询执行
+- Claude → 金龙 / 麦龙：写入 TASKS.md，对方轮询执行
 
 ---
 
@@ -49,7 +49,7 @@ Colode（战略层 / 总参谋）
 金龙：补充干货、案例、数据
     → 存入 content/drafts/YYYYMMDD_标题.md
     ↓
-Colode：审核，提修改意见
+Claude：审核，提修改意见
     → 意见写在文件头部 [REVIEW] 块中
     ↓
 金龙：二改

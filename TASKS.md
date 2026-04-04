@@ -1,6 +1,6 @@
 # 任务清单
 
-> 最后更新：2026-03-31 | 更新者：Colode
+> 最后更新：2026-04-04 | 更新者：Claude
 
 ---
 
@@ -8,17 +8,13 @@
 
 | ID | 执行者 | 任务描述 | 优先级 | 输出位置 |
 |----|--------|---------|--------|---------|
-| T003 | 金龙 | 完成能力摸底问卷（见 briefs/capability-questions-金龙.md），输出报告 | 🔥最高 | briefs/capability-report-金龙.md |
-| T004 | 金龙 | 测试钉钉连接器：用凭证配置 Gateway，测试能否连通钉钉 Stream | 🔥最高 | 见下方凭证 |
-| T001 | 金龙 | 下载西门子官网产品手册（S7-1200 系列），存入 knowledge/siemens/ | 高 | knowledge/siemens/ |
+| T003 | 金龙 | 【第一层·能力摸底】阅读 briefs/capability-questions-金龙.md，逐条如实回答，填写到 briefs/capability-report-金龙.md | 🔥最高 | briefs/capability-report-金龙.md |
+| T004 | 麦龙 | 【第一层·能力摸底】阅读 briefs/capability-questions-麦龙.md，逐条如实回答，填写到 briefs/capability-report-麦龙.md | 🔥最高 | briefs/capability-report-麦龙.md |
+| T005 | 金龙 | 【第二层·工具盘点】列出本地爬虫工具和自动化收集器的目录结构、可执行命令、当前状态，填写到 tools/inventory-金龙.md | 高 | tools/inventory-金龙.md |
+| T006 | 麦龙 | 【第二层·工具盘点】列出云端爬虫工具和自动化收集器的目录结构、可执行命令、当前状态，填写到 tools/inventory-麦龙.md | 高 | tools/inventory-麦龙.md |
+| T007 | 金龙 | 测试钉钉连接器：配置 Gateway，测试能否连通钉钉 Stream（凭证由 Boss 私下告知，勿写入本文件） | 高 | briefs/dingtalk-test-result.md |
+| T001 | 金龙 | 下载西门子官网产品手册（S7-1200 系列），存入 knowledge/siemens/ | 中 | knowledge/siemens/ |
 | T002 | 麦龙 | 监听以下公众号最新 3 篇文章，摘要存入 intel/wechat/：[待补充公众号名单] | 中 | intel/wechat/ |
-
-### T004 钉钉连接器凭证
-```
-Client ID: dingmjsswyewby4nuggt
-Client Secret: lQ7y0uannvdFV7p3MsesQKnTqHF_f_I_nkmet5kHtgQNin53L8C2H33sA12-Zoaj
-```
-测试步骤：1.验证凭证 → 2.配置Gateway channels → 3.重启Gateway → 4.钉钉发消息测试
 
 ---
 
@@ -31,6 +27,15 @@ _（代理执行时将任务移至此处，注明开始时间）_
 ## 🟢 已完成
 
 _（完成后移至此处，注明完成时间和结果）_
+
+---
+
+## 🔵 Colode 待处理（依赖上游结果）
+
+| ID | 触发条件 | 任务描述 | 输出位置 |
+|----|---------|---------|---------|
+| C001 | T003+T004 完成后 | 【第三层·优化分工】根据双Agent能力报告，制定正式分工方案、任务流转规则、钉钉接入建议，更新 PROTOCOL.md | PROTOCOL.md + briefs/分工方案.md |
+| C002 | T005+T006 完成后 | 【第三层·工具整合】将现有爬虫和自动化收集器拆解为标准化任务单元，写入本任务板，分配给金龙/麦龙执行 | TASKS.md |
 
 ---
 
@@ -49,8 +54,8 @@ _（完成后移至此处，注明完成时间和结果）_
 ## 📝 任务格式说明
 
 新增任务时，在"待执行"表格中添加一行：
-- ID：T + 流水号（如 T003）
+- ID：T + 流水号（如 T007）
 - 执行者：金龙 / 麦龙 / Colode
 - 任务描述：具体、可执行的描述
-- 优先级：高 / 中 / 低
+- 优先级：🔥最高 / 高 / 中 / 低
 - 输出位置：结果存放路径
