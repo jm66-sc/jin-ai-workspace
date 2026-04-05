@@ -9,6 +9,7 @@
 | ID | 执行者 | 任务描述 | 优先级 | 输出位置 |
 |----|--------|---------|--------|---------|
 | T010 | 麦龙 | 【链路验证·15:10定时执行】git pull 拉取仓库，确认 tools/crawler-金龙/ 文件存在，然后通过微信通知 Boss："链路验证完成✅ 金龙的文件已到位，整条链路通了。" | 🔥最高 | 微信通知Boss |
+| T011 | 麦龙 | 【自我测试·手动触发】完成以下三项并将结果写入 briefs/麦龙-workflow-proposal.md，然后 git push：① 描述你理想中的工作流：你负责哪部分、金龙负责哪部分、如何交接；② 给出一个你可以长期稳定运行的"URL监控"方案设计（假设 Boss 给你一批白名单URL，你定时爬取、摘要、推送结果到 GitHub + 微信通知，描述你会怎么实现、用什么工具、定时间隔建议）；③ 实际测试：选一个公开URL自行爬取，把摘要写入 intel/test-crawl-麦龙.md 并 git push。 | 高 | briefs/麦龙-workflow-proposal.md + intel/test-crawl-麦龙.md |
 | T005 | 金龙 | 【第二层·工具盘点】列出本地爬虫工具和自动化收集器的目录结构、可执行命令、当前状态，填写到 tools/inventory-金龙.md | 高 | tools/inventory-金龙.md |
 | T006 | 麦龙 | 【第二层·工具盘点】列出云端爬虫工具和自动化收集器的目录结构、可执行命令、当前状态，填写到 tools/inventory-麦龙.md | 高 | tools/inventory-麦龙.md |
 | T007 | 金龙 | 测试钉钉连接器：配置 Gateway，测试能否连通钉钉 Stream（凭证由 Boss 私下告知，勿写入本文件） | 高 | briefs/dingtalk-test-result.md |
