@@ -1,0 +1,150 @@
+#!/bin/bash
+
+# 获取脚本所在目录（.app内部）
+APP_DIR="$(dirname "$(dirname "$(dirname "$0")")")"
+PROJECT_PATH="/Users/jin/Desktop/爬虫工具/SmartScout"
+
+echo "启动 SmartScout 系统..."
+echo "项目路径: $PROJECT_PATH"
+
+# 检查项目是否存在
+if [ ! -d "$PROJECT_PATH" ]; then
+    echo "错误: 项目目录不存在: $PROJECT_PATH"
+    osascript -e 'display dialog "SmartScout 项目目录不存在，请检查安装位置。" buttons {"确定"} default button 1 with icon stop'
+    exit 1
+fi
+
+# 检查依赖
+check_command() {
+    if command -v "$1" &> /dev/null; then
+        return 0
+    else
+        return 1
+    fi
+}
+
+echo "检查系统依赖..."
+check_command "python3"
+PYTHON_INSTALLED=$?
+check_command "node"
+NODE_INSTALLED=$?
+check_command "npm"
+NPM_INSTALLED=$?
+
+# 检查所有依赖是否都已安装
+ALL_DEPS_INSTALLED=true
+if [ $PYTHON_INSTALLED -ne 0 ] || [ $NODE_INSTALLED -ne 0 ] || [ $NPM_INSTALLED -ne 0 ]; then
+    ALL_DEPS_INSTALLED=false
+fi
+
+# 如果缺少依赖，显示安装对话框
+if [ "$ALL_DEPS_INSTALLED" = false ]; then
+    echo "缺少必要的依赖"
+
+    MISSING_DEPS=""
+    [ $PYTHON_INSTALLED -ne 0 ] && MISSING_DEPS="${MISSING_DEPS}• Python 3\n"
+    [ $NODE_INSTALLED -ne 0 ] && MISSING_DEPS="${MISSING_DEPS}• Node.js\n"
+    [ $NPM_INSTALLED -ne 0 ] && MISSING_DEPS="${MISSING_DEPS}• npm\n"
+
+    # 显示对话框提供选项
+    DIALOG_RESULT=$(osascript <<EOF
+    set answer to button returned of (display dialog "SmartScout 缺少必要的依赖：\n\n${MISSING_DEPS}\n请选择操作：" buttons {"自动安装", "手动安装指导", "退出"} default button "自动安装")
+    return answer
+EOF
+    )
+
+    if [ "$DIALOG_RESULT" = "自动安装" ]; then
+        echo "正在启动依赖安装助手..."
+        # 在新终端中运行安装脚本
+        osascript <<EOF
+        tell application "Terminal"
+            activate
+            do script "cd \\"$PROJECT_PATH\\" && chmod +x ./install-dependencies.sh && ./install-dependencies.sh"
+        end tell
+EOF
+        exit 0
+    elif [ "$DIALOG_RESULT" = "手动安装指导" ]; then
+        osascript <<EOF
+        display dialog "手动安装指导：\n\n1. 安装 Python 3:\n   方法 A: brew install python@3.11\n   方法 B: 从官网下载 https://www.python.org/\n\n2. 安装 Node.js (包含 npm):\n   方法 A: brew install node@18\n   方法 B: 从官网下载 https://nodejs.org/\n   方法 C: 使用 nvm (推荐)\n\n安装完成后，请重新启动 SmartScout。" buttons {"确定"} default button 1
+EOF
+        exit 0
+    else
+        echo "用户选择退出"
+        exit 0
+    fi
+fi
+
+echo "✓ 所有依赖检查通过"
+
+# 在新终端窗口中启动系统
+echo "正在打开新终端窗口启动系统..."
+
+# 创建临时启动脚本
+LAUNCH_SCRIPT=$(mktemp)
+cat > "$LAUNCH_SCRIPT" << 'EOF'
+#!/bin/bash
+
+echo "========================================"
+echo "   SmartScout 智能招标爬虫系统"
+echo "========================================"
+echo ""
+
+PROJECT_PATH="/Users/jin/Desktop/爬虫工具/SmartScout"
+cd "$PROJECT_PATH"
+
+# 检查服务是否已在运行
+echo "检查服务状态..."
+
+if curl -s http://localhost:8000/health > /dev/null 2>&1; then
+    echo "✓ 后端服务已在运行 (端口 8000)"
+    BACKEND_RUNNING=true
+else
+    echo "○ 后端服务未运行"
+    BACKEND_RUNNING=false
+fi
+
+if curl -s http://localhost:3001 > /dev/null 2>&1; then
+    echo "✓ 前端服务已在运行 (端口 3001)"
+    FRONTEND_RUNNING=true
+else
+    echo "○ 前端服务未运行"
+    FRONTEND_RUNNING=false
+fi
+
+echo ""
+
+if [ "$BACKEND_RUNNING" = true ] && [ "$FRONTEND_RUNNING" = true ]; then
+    echo "所有服务已在运行，正在打开浏览器..."
+    sleep 1
+    open "http://localhost:3001"
+
+    echo ""
+    echo "访问地址:"
+    echo "• 前端界面: http://localhost:3001"
+    echo "• 后端API:  http://localhost:8000"
+    echo "• API文档: http://localhost:8000/docs"
+    echo ""
+    echo "按 Enter 键退出..."
+    read -r
+    exit 0
+fi
+
+echo "正在启动完整系统..."
+echo "按 Ctrl+C 停止所有服务"
+echo ""
+./run_all.sh
+
+echo ""
+echo "SmartScout 系统已停止"
+echo "按 Enter 键关闭窗口..."
+read -r
+EOF
+
+chmod +x "$LAUNCH_SCRIPT"
+
+# 在新终端窗口中运行
+open -a Terminal "$LAUNCH_SCRIPT"
+
+# 等待一会，然后退出当前进程
+sleep 2
+exit 0

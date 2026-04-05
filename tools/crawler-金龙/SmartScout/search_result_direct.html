@@ -1,0 +1,956 @@
+
+
+
+
+
+
+
+<!doctype html>
+<html>
+<head>
+
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>采购公告搜索_中国政府采购网</title>
+    <link href="/static/css/style4.css" rel="stylesheet" type="text/css"/>
+
+    <link href="/static/css/data4.css" rel="stylesheet" type="text/css"/>
+    <script>
+        var path = "/";
+        var basePath = "//search.ccgp.gov.cn/";
+        var staticPath = path + "static/";
+        var dateTy = '2';
+        var bidType = '0';
+        var bidSort = '0';
+        var pinMu = '0';
+        var searchtype = '2';
+        var kw = '消防';
+        var buyerName = '';
+        var projectId = '';
+        var zoneId = '';
+        var displayZone = '';
+        var agentName = '';
+        var pppStatus = '0';
+        var start_time = '2026:02:04';
+        var end_time = '2026:02:11';
+        var page_index=1;
+
+
+    </script>
+
+    <script type="text/javascript" src="/static/js/jquery-3.6.0.min.js"></script>
+
+    <script type="text/javascript" src="/static/js/data4.js"></script>
+    <script type="text/javascript" src="/static/js/page.js"></script>
+    <script type="text/javascript" src="/static/js/laydate/laydate.js"></script>
+</head>
+<body style="background:#fff">
+
+<link href="//www.ccgp.gov.cn/css/inc.css" rel="stylesheet" type="text/css" />
+<div class="v4incheadertop">
+    <div class="v4incheadertop_tel_block">
+        <div class="v4incheadertop_tel">
+            <p class="cl">财政部唯一指定政府采购信息网络发布媒体 国家级政府采购专业网站</p><p class="cr">服务热线：400-810-1996  &nbsp; | &nbsp; 服务投诉：010-63819289</p>
+        </div>
+    </div>
+    <div class="v4incheadertop_logosearch_block2">
+        <div class="v4incheadertop_logosearch">
+        <div class="searcharea1">
+            <div class="logo_gh" style="margin-top:20px">
+            <a href="#" class="ccgp"></a>
+            <a href="#" class="ccgp2"></a>
+            <a href="#" class="gmfw"></a>
+            <a href="#" class="ccgp3"></a>
+            </div>
+        </div>
+
+        <div class="searcharea2">
+            <div class="sangong_bl"></div>
+
+        </div></div>
+    </div>
+    <div class="v4incheadertop_nav_block">
+        <div class="v4incheadertop_nav">
+            <ul class="v4incheadertop_nav_ls">
+                <li  id="ch_index" style="width:140px"><a href="//www.ccgp.gov.cn/">首页</a></li>
+                <li id="ch_zcfg" style="width: 172px"><a href="//www.ccgp.gov.cn/zcfg/">政采法规</a></li>
+                <li id="ch_gmfw" style="width:172px"><a href="//www.ccgp.gov.cn/gpsr/">购买服务</a></li>
+                <li id="ch_jdjc" style="width:172px"><a href="//www.ccgp.gov.cn/jdjc/">监督检查</a></li>
+                <li id="ch_xxgg" style="width:172px"><a href="//www.ccgp.gov.cn/xxgg/">信息公告</a></li>
+                <li id="ch_gpa" style="width:172px"><a href="//www.ccgp.gov.cn/wtogpa/">国际专栏</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="clb"></div>
+</div>
+
+<div class="vT_z">
+    <div style="width:100%;background:#ccc">
+        <ul class="vT_search_sortby">
+            <li>
+                <a href="//search.ccgp.gov.cn/znzxsearch?searchtype=1&page_index=1&searchchannel=0&kw=消防&timeType=0">站内资讯</a>
+            </li>
+            <li class="current2">采购公告</li>
+            <li><a href="//search.ccgp.gov.cn/zcfgsearch">政策法规</a></li>
+        </ul>
+    </div>
+</div>
+<span class="blank37"></span>
+
+<div class="vT_z">
+    <div class="vT-srch-result-top">
+        <div class="vT-srch-result-top-logo n_fl"><img
+                src="/static/images/searchplatform_bid.gif"
+                style="border:0"></div>
+        <div class="vT-srch-result-top-form n_fr">
+            <form name="searchForm" id="searchForm" action="//search.ccgp.gov.cn/bxsearch" method="get">
+                <input type="hidden" name="searchtype" id="searchtype" value="2">
+                <input type="hidden" name="page_index" id="page_index" value="1">
+                <input type="hidden" name="bidSort" id="bidSort" value="0">
+                <input type="hidden" name="buyerName" id="buyerName" value="">
+                <input type="hidden" name="projectId" id="projectId" value="">
+                <input type="hidden" name="pinMu" id="pinMu" value="0">
+                <input type="hidden" name="bidType" id="bidType" value="0">
+                <input type="hidden" name="dbselect" value="bidx">
+                <input name="kw" id="kw" type="text" style="float:left;width:260px" value="消防"/>
+                <input type="hidden" name="start_time" id="start_time" value="2026:02:04">
+                <input type="hidden" name="end_time" id="end_time" value="2026:02:11">
+                <input type="hidden" name="timeType" id="timeType" value="2">
+                <input type="hidden" name="displayZone" id="displayZone" value="">
+                <input type="hidden" name="zoneId" id="zoneId" value="">
+                <input type="hidden" name="pppStatus" id="pppStatus" value="0">
+                <input type="hidden" name="agentName" id="agentName" value="">
+                <input type="button" value="搜标题" id="doSearch1" onclick="validateCode(1)"
+                       style="font-size:14px;font-weight:bolder;width:70px;cursor:pointer;background:#cc0000;color:#fff;float:left;height:34px" class="main"/>
+                <input type="button" value="搜全文" id="doSearch2" onclick="validateCode(2)"
+                       style="font-size:14px;font-weight:bolder;width:70px;cursor:pointer;background:#0082d4;color:#fff;float:left;height:34px" class="main"/>
+            </form>
+        </div>
+    </div>
+</div>
+</div>
+<!---->
+<span class="blank10"></span>
+
+<div class="vT_z" id="vT_bidSearch_o">
+    <div class="vT_bidSearch_outsider">
+        <!--选择内容-->
+        <div class="vT_bidSearch_addon_con" style="margin-top:20px">
+            <div class="vT_bidSearch_addon_block2" style="margin-left:0;float:left;"><p
+                    style="vertical-align:top;margin-top:0;padding-top:0">类型</p></div>
+            <div style="float:left;width:870px;height:60px">
+                <ul class="vT-srch-result-channel-list2" id="searchbidTypeSel">
+                    <li onclick="bidTypeSel(0)">所有类型</li>
+                    <li onclick="bidTypeSel(1)">公开招标</li>
+                    <li onclick="bidTypeSel(2)">询价公告</li>
+                    <li onclick="bidTypeSel(3)">竞争性谈判</li>
+                    <li onclick="bidTypeSel(4)">单一来源</li>
+                    <li onclick="bidTypeSel(5)">资格预审</li>
+                    <li onclick="bidTypeSel(6)">邀请公告</li>
+                    <li onclick="bidTypeSel(7)">中标公告</li>
+                    <li onclick="bidTypeSel(8)">更正公告</li>
+                    <li onclick="bidTypeSel(9)">其他公告</li>
+                    <li onclick="bidTypeSel(10)">竞争性磋商</li>
+                    <li onclick="bidTypeSel(11)">成交公告</li>
+                    <li onclick="bidTypeSel(12)">终止公告</li>
+                    <li onclick="isPPP()"><img src="/static/images/ppp_off.gif" title="ppp项目" id="disPPP"></li>
+                </ul>
+            </div>
+            <div style="clear:both"></div>
+        </div>
+        <!--选择内容-->
+        <div class="vT_bidSearch_addon_con">
+            <div class="vT_bidSearch_addon_block2" style="margin-left:0;float:left;"><p
+                    style="vertical-align:top;margin-top:0;padding-top:15px">类别</p></div>
+            <div style="float:left;width:870px;height:30px;margin-top:15px">
+                <ul class="vT-srch-result-channel-list3" id="searchBidSortSel">
+                    <li onclick="bidSortSel(0)">所有类别</li>
+                    <li onclick="bidSortSel(1)">中央公告</li>
+                    <li onclick="bidSortSel(2)">地方公告</li>
+                </ul>
+            </div>
+            <div style="clear:both"></div>
+        </div>
+        <!--选择内容-->
+        <div class="vT_bidSearch_addon_con">
+            <div class="vT_bidSearch_addon_block2" style="margin-left:0;float:left;"><p
+                    style="vertical-align:top;margin-top:0;padding-top:15px">品目</p></div>
+            <div style="float:left;width:870px;height:30px;margin-top:15px">
+                <ul class="vT-srch-result-channel-list3" id="searchPinMuSel">
+                    <li onclick="pinMuSel(0)">所有品目</li>
+                    <li onclick="pinMuSel(1)">货物类</li>
+                    <li onclick="pinMuSel(2)">工程类</li>
+                    <li onclick="pinMuSel(3)">服务类</li>
+                </ul>
+            </div>
+            <div style="clear:both"></div>
+        </div>
+        <!--选择内容-->
+        <div class="vT_bidSearch_addon_con">
+            <div class="vT_bidSearch_addon_block2" style="margin-left:0;float:left;"><p
+                    style="vertical-align:top;margin-top:0;padding-top:15px">时间</p></div>
+            <div style="float:left;width:870px;height:30px;margin-top:15px;position:relative">
+                <ul class="vT-srch-result-channel-list3" id="datesel">
+                    <li onclick="timeSel(0)">今日</li>
+                    <li onclick="timeSel(1)">近3日</li>
+                    <li onclick="timeSel(2)">近1周</li>
+                    <li onclick="timeSel(3)">近1月</li>
+                    <li onclick="timeSel(4)">近3月</li>
+                    <li onclick="timeSel(5)">近半年</li>
+                    <li id="cusTime">指定时间</li>
+                </ul>
+                <div class="cusTime_container">
+                    <span>指定时间</span>
+                    <input type="text" name="inpCusStartTime" id="inpCusStartTime" readonly="readonly"
+                           value="2026-02-04">
+                    <input type="text" name="inpCusEndTime" id="inpCusEndTime" readonly="readonly"
+                           value="2026-02-11">
+                    <em class="dose" title="查询">查询</em>
+                    <em class="clos" title="取消">取消</em>
+                </div>
+            </div>
+            <div style="clear:both"></div>
+        </div>
+        <!--输入内容-->
+        <div class="vT_bidSearch_addon_con">
+            <div class="vT_bidSearch_addon_block" style="margin-left:0">
+                <p>采购人</p>
+                <input value="" type="text" name="inpBuyerName" id="inpBuyerName">
+            </div>
+            <div class="vT_bidSearch_addon_block">
+                <p>项目编号</p>
+                <input value="" type="text" name="inpProjectId" id="inpProjectId">
+            </div>
+
+            <div class="vT_bidSearch_addon_block" id="zonearea">
+                <p>地区</p>
+                <input value="" type="text" name="inpDisplayZone" id="inpDisplayZone"
+                       readonly="readonly">
+                <input type="hidden" name="inpZoneId" id="inpZoneId">
+
+                <div class="zone_list_container">
+                    <ul class="zone_list" zoneId="">
+                        <li>全部</li>
+                        <li zoneId="11">北京</li>
+                        <li zoneId="12">天津</li>
+                        <li zoneId="13">河北</li>
+
+                        <li zoneId="14">山西</li>
+                        <li zoneId="15">内蒙古</li>
+                        <li zoneId="21 not 2102">辽宁</li>
+                        <li zoneId="2102">大连</li>
+                        <li zoneId="22">吉林</li>
+                        <li zoneId="23">黑龙江</li>
+                        <li zoneId="31">上海</li>
+                        <li zoneId="32">江苏</li>
+
+                        <li zoneId="33 not 3302">浙江</li>
+                        <li zoneId="3302">宁波</li>
+                        <li zoneId="34">安徽</li>
+                        <li zoneId="35 not 3502">福建</li>
+                        <li zoneId="3502">厦门</li>
+                        <li zoneId="36">江西</li>
+
+                        <li zoneId="37 not 3702">山东</li>
+                        <li zoneId="3702">青岛</li>
+                        <li zoneId="41">河南</li>
+                        <li zoneId="42">湖北</li>
+                        <li zoneId="43">湖南</li>
+                        <li zoneId="44 not 4403">广东</li>
+
+                        <li zoneId="4403">深圳</li>
+                        <li zoneId="45">广西</li>
+                        <li zoneId="46">海南</li>
+                        <li zoneId="50">重庆</li>
+                        <li zoneId="51">四川</li>
+                        <li zoneId="52">贵州</li>
+
+                        <li zoneId="53">云南</li>
+                        <li zoneId="54">西藏</li>
+                        <li zoneId="61">陕西</li>
+                        <li zoneId="62">甘肃</li>
+                        <li zoneId="63">青海</li>
+                        <li zoneId="64">宁夏</li>
+
+                        <li zoneId="65">新疆</li>
+                        <li zoneid="66" style="width:121px">新疆生产建设兵团</li>
+                        <li zoneId="71">台湾</li>
+                        <li zoneId="81">香港</li>
+                        <li zoneId="82">澳门</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="vT_bidSearch_addon_block" style="margin-left:0">
+                <p>代理机构</p>
+                <input type="text" name="inpAgentName" id="inpAgentName" value="">
+            </div>
+            <div class="vT_bidSearch_addon_block">
+                <div style="position:relative">
+                    <!--
+                    <div class="code" id="checkCode" style="float:left">
+                        <img onclick="javascript:loadimage();" title="换一张试试" name="randImage" id="randImage"
+                             src="//search.ccgp.gov.cn/ValidateImage">
+                    </div>
+                    <input style="float:left;" type="text" id="inpid" name="inpid" style="border:2px solid #ac0000"/>
+
+                    <div style="position:absolute;width:260px;height:24px;margin-left:205px;margin-top:8px;">请输入左侧验证码
+                    </div>
+                    -->
+                </div>
+            </div>
+            <div style="clear:both"></div>
+        </div>
+        <div style="clear:both"></div>
+    </div>
+</div>
+<span class="blank20"></span>
+<!---->
+<div class="vT_z">
+    <div style="width:100%;height:30px">
+        
+
+        
+            <!-- something-->
+            <div style="font-size:14px">
+                <p style="float:left">关键字：
+                    <span style="color:#c00000;font-weight:bolder">消防</span>
+                    
+                    
+                        全文检索
+                    
+                    共找到
+                    <span style="color:#c00000">904</span>
+                    条内容 查询日期从
+                    <span style="color:#c00000">2026-02-04</span>
+                    到
+                    <span style="color:#c00000">2026-02-11</span>
+                </p>
+
+                
+                    <p class="pager">
+                        <script language="javascript">Pager({
+                            size: 46,
+                            current: 0,
+                            prefix: 'data2',
+                            suffix: '.jsp&'
+                        });</script>
+                    </p>
+                
+            </div>
+        
+
+
+    </div>
+
+    
+        <!---->
+        <span class="blank10"></span>
+
+        <div class="vT_z" style="position:relative">
+            <div class="vT-srch-result">
+                <div class="vT-srch-result-list-con2">
+                    <div class="vT-srch-result-list">
+                        <ul class="vT-srch-result-list-bid">
+                            
+
+                                <li>
+                                    <a href="http://www.ccgp.gov.cn/cggg/dfgg/gkzb/202602/t20260211_26169177.htm" style="line-height:18px">
+                                        山东省林业保护和发展服务中心山东省2026年度森林<font color=red>消防</font>租机项目(2)公开招标公告
+                                    </a>
+
+                                    <p>山东省林业保护和发展服务中心山东省2026年度森林<font color=red>消防</font>租机项目(2)公开招标公告											项目概况										山东省2026年度森林<font color=red>消防</font>租机项目(2)招标项目的潜在投标人应在(齐鲁云采交易系统)获取招标文件，并于2026年03月</p>
+                                    <span>2026.02.11 01:01:04
+                                        | 采购人：山东省林业保护和发展服务中心
+                                        | 代理机构：山东省政府采购中心
+                                        <br/>
+                                        <strong style="font-weight:bolder">
+                                            
+                                            
+                                                公开招标公告
+                                            
+                                        </strong>
+                                        | 山东
+                                        | <strong style="font-weight:bolder"> </strong>
+                                        
+                                    </span>
+                                </li>
+                            
+
+                                <li>
+                                    <a href="http://www.ccgp.gov.cn/cggg/dfgg/jzxcs/202602/t20260211_26169181.htm" style="line-height:18px">
+                                        济南市章丘区第五中学山东省济南市章丘区第五中学安保及综合管理服务项目竞争性磋商公告
+                                    </a>
+
+                                    <p>目预算金额为890000元，其中：无分包保安服务890000元采购需求：本次服务内容为我校提供2026年度安保服务、<font color=red>消防</font>中控管理、监控管理服务等合同履行期限：自合同签订之日起按照采购人安排，在规定时间内完成所有工作，合同</p>
+                                    <span>2026.02.11 01:01:04
+                                        | 采购人：济南市章丘区第五中学
+                                        | 代理机构：山东重起工程项目管理有限公司
+                                        <br/>
+                                        <strong style="font-weight:bolder">
+                                            
+                                            
+                                                竞争性磋商公告
+                                            
+                                        </strong>
+                                        | 山东
+                                        | <strong style="font-weight:bolder"> </strong>
+                                        
+                                    </span>
+                                </li>
+                            
+
+                                <li>
+                                    <a href="http://www.ccgp.gov.cn/cggg/dfgg/gkzb/202602/t20260211_26169092.htm" style="line-height:18px">
+                                        济南市槐荫区应急管理局腊山<font color=red>消防</font>救援站装备器材采购项目公开招标公告
+                                    </a>
+
+                                    <p>济南市槐荫区应急管理局腊山<font color=red>消防</font>救援站装备器材采购项目公开招标公告项目概况：腊山<font color=red>消防</font>救援站装备器材采购项目招标项目的潜在投标人应在相应公告界面获取招标文件，并于2026-03-0309:00:00（北京时间）前递交投标文件。</p>
+                                    <span>2026.02.11 01:00:47
+                                        | 采购人：济南市槐荫区应急管理局
+                                        | 代理机构：山东省国际招标有限公司
+                                        <br/>
+                                        <strong style="font-weight:bolder">
+                                            
+                                            
+                                                公开招标公告
+                                            
+                                        </strong>
+                                        | 山东
+                                        | <strong style="font-weight:bolder"> </strong>
+                                        
+                                    </span>
+                                </li>
+                            
+
+                                <li>
+                                    <a href="http://www.ccgp.gov.cn/cggg/dfgg/zbgg/202602/t20260211_26169091.htm" style="line-height:18px">
+                                        威海火炬高技术产业开发区财政金融局选定威海高区保税物流中心（B型）项目造价咨询服务单位竞争性磋商成交结果公告
+                                    </a>
+
+                                    <p>、项目编号：SDGP371095000202602000001二、项目（包段）名称：1#仓库等、2#仓库、3#厂房等、土方、桩基、<font color=red>消防</font>水池及泵房等、室外部分、高低压配电、智能化等三、成交信息标包投标人（供应商）名称地址中标（成交）金额(</p>
+                                    <span>2026.02.11 01:00:39
+                                        | 采购人：威海火炬高技术产业开发区财政金融局
+                                        | 代理机构：威海鸿泰管理咨询有限公司
+                                        <br/>
+                                        <strong style="font-weight:bolder">
+                                            
+                                            
+                                                中标公告
+                                            
+                                        </strong>
+                                        | 山东
+                                        | <strong style="font-weight:bolder"> </strong>
+                                        
+                                    </span>
+                                </li>
+                            
+
+                                <li>
+                                    <a href="http://www.ccgp.gov.cn/cggg/dfgg/zbgg/202602/t20260211_26169143.htm" style="line-height:18px">
+                                        济南市历下区自然资源局济南市历下区自然资源局采购2026年度森林<font color=red>消防</font>（防汛）大队管理外包服务成交公告
+                                    </a>
+
+                                    <p>全省招标类信息系统						济南市历下区自然资源局采购2026年度森林<font color=red>消防</font>（防汛）大队管理外包服务成交公告							一、项目编号：SDGP370102000202602000006			二、项目名称：济南市历下区自然资源局采购2026年度森林<font color=red>消防</font>（</p>
+                                    <span>2026.02.11 01:00:23
+                                        | 采购人：济南市历下区自然资源局
+                                        | 代理机构：山东招标股份有限公司
+                                        <br/>
+                                        <strong style="font-weight:bolder">
+                                            
+                                            
+                                                中标公告
+                                            
+                                        </strong>
+                                        | 山东
+                                        | <strong style="font-weight:bolder"> </strong>
+                                        
+                                    </span>
+                                </li>
+                            
+
+                                <li>
+                                    <a href="http://www.ccgp.gov.cn/cggg/dfgg/zbgg/202602/t20260211_26169140.htm" style="line-height:18px">
+                                        山东省林业保护和发展服务中心山东省2026年度森林<font color=red>消防</font>租机项目中标结果公告
+                                    </a>
+
+                                    <p>山东省林业保护和发展服务中心山东省2026年度森林<font color=red>消防</font>租机项目中标结果公告				一、项目编号：SDGP370000000202602000086				二、项目名称：山东省2026年度森林<font color=red>消防</font>租机项目				三、中标（成交）信息																包号</p>
+                                    <span>2026.02.11 01:00:13
+                                        | 采购人：山东省林业保护和发展服务中心
+                                        | 代理机构：山东舜德项目管理咨询有限公司
+                                        <br/>
+                                        <strong style="font-weight:bolder">
+                                            
+                                            
+                                                中标公告
+                                            
+                                        </strong>
+                                        | 山东
+                                        | <strong style="font-weight:bolder"> </strong>
+                                        
+                                    </span>
+                                </li>
+                            
+
+                                <li>
+                                    <a href="http://www.ccgp.gov.cn/cggg/dfgg/jzxcs/202602/t20260210_26168992.htm" style="line-height:18px">
+                                        华瑞国际工程咨询集团有限公司关于长春理工大学<font color=red>消防</font>控制室值班人员招标项目的竞争性磋商公告
+                                    </a>
+
+                                    <p>‍项目概况长春理工大学<font color=red>消防</font>控制室值班人员招标项目采购项目的潜在供应商应在政采云平台线上获取获取采购文件，并于2026年02月26日13:30（北京时间）前提交响应文件。一、项目基本情况项目编号：采购计划备-[2026]-013</p>
+                                    <span>2026.02.10 21:57:55
+                                        | 采购人：长春理工大学
+                                        | 代理机构：华瑞国际工程咨询集团有限公司
+                                        <br/>
+                                        <strong style="font-weight:bolder">
+                                            
+                                            
+                                                竞争性磋商公告
+                                            
+                                        </strong>
+                                        | 吉林
+                                        | <strong style="font-weight:bolder"> </strong>
+                                        
+                                    </span>
+                                </li>
+                            
+
+                                <li>
+                                    <a href="http://www.ccgp.gov.cn/cggg/zygg/zbgg/202602/t20260210_26168962.htm" style="line-height:18px">
+                                        河海大学南京校区2026年至2029年<font color=red>消防</font>系统维保（三年）中标公告
+                                    </a>
+
+                                    <p>（AF20250124）（招标文件编号：2640SUMEC/GXHD1008（AF20250124））二、项目名称：南京校区2026年至2029年<font color=red>消防</font>系统维保（三年）三、中标（成交）信息供应商名称：安徽啦啦象<font color=red>消防</font>技术有限公司供应商地址：安徽省芜湖市弋</p>
+                                    <span>2026.02.10 21:21:00
+                                        | 采购人：河海大学
+                                        | 代理机构：江苏苏美达仪器设备有限公司
+                                        <br/>
+                                        <strong style="font-weight:bolder">
+                                            
+                                            
+                                                中标公告
+                                            
+                                        </strong>
+                                        | 江苏
+                                        | <strong style="font-weight:bolder"> 服务/商务服务/维修和保养服务/消防设备维修和保养服务</strong>
+                                        
+                                    </span>
+                                </li>
+                            
+
+                                <li>
+                                    <a href="http://www.ccgp.gov.cn/cggg/dfgg/zbgg/202602/t20260210_26168960.htm" style="line-height:18px">
+                                        新征程(杭州)招标代理有限公司关于温州市洞头区基层应急<font color=red>消防</font>体系建设项目(重)中标(成交)结果公告
+                                    </a>
+
+                                    <p>一、项目编号：330305253710010000007-DTCG20260120003二、项目名称：温州市洞头区基层应急<font color=red>消防</font>体系建设项目(重)三、中标（成交）信息1.中标结果：序号中标（成交）金额(元)中标供应商名称中标供应商地址1投标价：635400</p>
+                                    <span>2026.02.10 21:10:17
+                                        | 采购人：温州市洞头区应急管理局
+                                        | 代理机构：新征程(杭州)招标代理有限公司
+                                        <br/>
+                                        <strong style="font-weight:bolder">
+                                            
+                                            
+                                                中标公告
+                                            
+                                        </strong>
+                                        | 浙江
+                                        | <strong style="font-weight:bolder"> </strong>
+                                        
+                                    </span>
+                                </li>
+                            
+
+                                <li>
+                                    <a href="http://www.ccgp.gov.cn/cggg/dfgg/gkzb/202602/t20260210_26168933.htm" style="line-height:18px">
+                                        哈尔滨工业大学（深圳）校园物业和安保服务项目（A）招标公告
+                                    </a>
+
+                                    <p>公章）；②分包承担主体须具有《雷电防护装置检测资质证书》，提供证书扫描件；2.3本项目允许投标人将建筑<font color=red>消防</font>设施和电气防火检测工作分包。（1）若不分包，投标人须在社会<font color=red>消防</font>技术服务信息系统备案，提供备案截图。（2）</p>
+                                    <span>2026.02.10 20:37:07
+                                        | 采购人：哈尔滨工业大学（深圳）
+                                        | 代理机构：深圳交易集团有限公司政府采购业务分公司
+                                        <br/>
+                                        <strong style="font-weight:bolder">
+                                            
+                                            
+                                                公开招标公告
+                                            
+                                        </strong>
+                                        | 广东
+                                        | <strong style="font-weight:bolder"> 物业管理服务</strong>
+                                        
+                                    </span>
+                                </li>
+                            
+
+                                <li>
+                                    <a href="http://www.ccgp.gov.cn/cggg/zygg/cjgg/202602/t20260210_26168910.htm" style="line-height:18px">
+                                        成都市郫都区<font color=red>消防</font>救援大队成都市郫都区<font color=red>消防</font>工作服务中心办公室改造项目（二次）成交公告
+                                    </a>
+
+                                    <p>一、项目编号：SCYDL-20251216（招标文件编号：SCYDL-20251216）二、项目名称：成都市郫都区<font color=red>消防</font>工作服务中心办公室改造项目（二次）三、中标（成交）信息供应商名称：四川恒瑞新宸建筑工程有限公司供应商地址：成都市青</p>
+                                    <span>2026.02.10 20:28:34
+                                        | 采购人：成都市郫都区消防救援大队
+                                        | 代理机构：四川亿达利工程项目管理有限公司
+                                        <br/>
+                                        <strong style="font-weight:bolder">
+                                            
+                                            
+                                                成交公告
+                                            
+                                        </strong>
+                                        | 四川
+                                        | <strong style="font-weight:bolder"> 工程/房屋施工/办公用房施工</strong>
+                                        
+                                    </span>
+                                </li>
+                            
+
+                                <li>
+                                    <a href="http://www.ccgp.gov.cn/cggg/dfgg/zbgg/202602/t20260210_26168911.htm" style="line-height:18px">
+                                        确山县民政局确山县中心城区综合养老改扩建项目新建建筑空调及电梯采购项目-中标公告
+                                    </a>
+
+                                    <p>住宅小区3号楼东1单元27层27011,187,000.00元评审总得分:80.16分序号名称品牌（如有）规格型号数量单价1DT3<font color=red>消防</font>梯污梯日立电梯HGE1404800.00元2DT1客梯日立电梯HGE1388600.00元3...............元四、评审专家名单撒国娜</p>
+                                    <span>2026.02.10 20:26:17
+                                        | 采购人：确山县民政局
+                                        | 代理机构：河南千千工程管理有限公司
+                                        <br/>
+                                        <strong style="font-weight:bolder">
+                                            
+                                            
+                                                中标公告
+                                            
+                                        </strong>
+                                        | 河南
+                                        | <strong style="font-weight:bolder"> </strong>
+                                        
+                                    </span>
+                                </li>
+                            
+
+                                <li>
+                                    <a href="http://www.ccgp.gov.cn/cggg/dfgg/gzgg/202602/t20260210_26168888.htm" style="line-height:18px">
+                                        南宁市江南区政府采购中心关于2025年南宁市江南区教育系统学校（幼儿园）保安服务项目变更公告
+                                    </a>
+
+                                    <p>项目经理需具备全日制大专（及）以上文化程度、持有人社部门核发的保安员二级（含二级）以上职业资格证书、<font color=red>消防</font>设施操作员四级/中级职业资格证书；配置至少5名保安队长需具备高中（含职高）及以上文化程度，持有人社部门</p>
+                                    <span>2026.02.10 20:01:59
+                                        | 采购人：南宁市江南区教育局
+                                        | 代理机构：南宁市江南区政府采购中心
+                                        <br/>
+                                        <strong style="font-weight:bolder">
+                                            
+                                            
+                                                更正公告
+                                            
+                                        </strong>
+                                        | 广西
+                                        | <strong style="font-weight:bolder"> </strong>
+                                        
+                                    </span>
+                                </li>
+                            
+
+                                <li>
+                                    <a href="http://www.ccgp.gov.cn/cggg/zygg/cjgg/202602/t20260210_26168862.htm" style="line-height:18px">
+                                        常州市钟楼区<font color=red>消防</font>救援大队2026年生日慰问、观影活动、节日慰问采购项目（二次）成交公告
+                                    </a>
+
+                                    <p>一、项目编号：CYZ2026-024（招标文件编号：CYZ2026-024）二、项目名称：常州市钟楼区<font color=red>消防</font>救援大队2026年生日慰问、观影活动、节日慰问采购项目（二次）三、中标（成交）信息供应商名称：武进区牛塘合和圆缘食品加工厂供</p>
+                                    <span>2026.02.10 19:57:55
+                                        | 采购人：常州市钟楼区消防救援大队
+                                        | 代理机构：江苏常源土地房地产资产评估造价有限公司
+                                        <br/>
+                                        <strong style="font-weight:bolder">
+                                            
+                                            
+                                                成交公告
+                                            
+                                        </strong>
+                                        | 江苏
+                                        | <strong style="font-weight:bolder"> 服务/商务服务/零售服务/综合零售服务</strong>
+                                        
+                                    </span>
+                                </li>
+                            
+
+                                <li>
+                                    <a href="http://www.ccgp.gov.cn/cggg/dfgg/jzxcs/202602/t20260210_26168836.htm" style="line-height:18px">
+                                        维吾尔族刺绣哈密传习所<font color=red>消防</font>改造项目竞争性磋商公告
+                                    </a>
+
+                                    <p>‍项目概况维吾尔族刺绣哈密传习所<font color=red>消防</font>改造项目采购项目的潜在供应商应在新疆政府采购网（http://www.ccgp-xinjiang.gov.cn）政采云系统平台线上获取采购文件，并于2026年02月27日10:00（北京时间）前提交响应文件。一</p>
+                                    <span>2026.02.10 19:40:12
+                                        | 采购人：哈密市文化馆
+                                        | 代理机构：新疆德鸿项目管理咨询有限公司
+                                        <br/>
+                                        <strong style="font-weight:bolder">
+                                            
+                                            
+                                                竞争性磋商公告
+                                            
+                                        </strong>
+                                        | 新疆
+                                        | <strong style="font-weight:bolder"> </strong>
+                                        
+                                    </span>
+                                </li>
+                            
+
+                                <li>
+                                    <a href="http://www.ccgp.gov.cn/cggg/dfgg/gkzb/202602/t20260210_26168807.htm" style="line-height:18px">
+                                        青岛市黄岛区应急管理局2025年度<font color=red>消防</font>车辆装备购置工程公开招标公告
+                                    </a>
+
+                                    <p>青岛市黄岛区应急管理局2025年度<font color=red>消防</font>车辆装备购置工程二次招标公开招标公告项目概况：2025年度<font color=red>消防</font>车辆装备购置工程二次招标招标项目的潜在投标人应在全国公共资源交易平台（山东省青岛市）青岛市公共资源交易电子服务系</p>
+                                    <span>2026.02.10 19:30:00
+                                        | 采购人：青岛市黄岛区应急管理局
+                                        | 代理机构：山东中孚项目管理有限公司
+                                        <br/>
+                                        <strong style="font-weight:bolder">
+                                            
+                                            
+                                                公开招标公告
+                                            
+                                        </strong>
+                                        | 山东
+                                        | <strong style="font-weight:bolder"> </strong>
+                                        
+                                    </span>
+                                </li>
+                            
+
+                                <li>
+                                    <a href="http://www.ccgp.gov.cn/cggg/dfgg/zbgg/202602/t20260210_26168790.htm" style="line-height:18px">
+                                        2026年度阿合奇县人民医院保安、保洁及<font color=red>消防</font>外包服务项目中标(成交)结果公告
+                                    </a>
+
+                                    <p>‍一、项目编号：AHQXZB-2026002二、项目名称：2026年度阿合奇县人民医院保安、保洁及<font color=red>消防</font>外包服务项目三、中标（成交）信息1.中标结果：序号供应商名称供应商地址中标（成交）金额评审总得分1新疆永合人力资源管理有限</p>
+                                    <span>2026.02.10 19:23:13
+                                        | 采购人：新疆阿合奇县人民医院
+                                        | 代理机构：新疆新越项目咨询有限责任公司
+                                        <br/>
+                                        <strong style="font-weight:bolder">
+                                            
+                                            
+                                                中标公告
+                                            
+                                        </strong>
+                                        | 新疆
+                                        | <strong style="font-weight:bolder"> </strong>
+                                        
+                                    </span>
+                                </li>
+                            
+
+                                <li>
+                                    <a href="http://www.ccgp.gov.cn/cggg/zygg/cjgg/202602/t20260210_26168705.htm" style="line-height:18px">
+                                        巴里坤县<font color=red>消防</font>救援大队主副食品配送项目成交公告
+                                    </a>
+
+                                    <p>一、项目编号：XJCYZC-2026-002（招标文件编号：XJCYZC-2026-002）二、项目名称：巴里坤县<font color=red>消防</font>救援大队主副食品配送项目三、中标（成交）信息供应商名称：新疆昇溢美商贸有限责任公司供应商地址：新疆哈密市巴里坤哈萨克</p>
+                                    <span>2026.02.10 19:02:05
+                                        | 采购人：新疆自治区消防救援总队哈密市支队
+                                        | 代理机构：新疆成源项目管理咨询有限公司
+                                        <br/>
+                                        <strong style="font-weight:bolder">
+                                            
+                                            
+                                                成交公告
+                                            
+                                        </strong>
+                                        | 新疆
+                                        | <strong style="font-weight:bolder"> 货物/物资/食品、饮料和烟草原料/农副食品，动、植物油制品/其他农副食品，动、植物油制品</strong>
+                                        
+                                    </span>
+                                </li>
+                            
+
+                                <li>
+                                    <a href="http://www.ccgp.gov.cn/cggg/dfgg/zbgg/202602/t20260210_26168693.htm" style="line-height:18px">
+                                        广西达成咨询有限公司关于广西壮族自治区河池市两河流域森林火灾高风险区综合治理项目(凤山县-<font color=red>消防</font>蓄水池、防火检查站建设、森林<font color=red>消防</font>车辆、扑火装备购置)（项目编号：HCZC2025-G1-230103-GXDC）中标结果公告
+                                    </a>
+
+                                    <p>CZC2025-G1-230103-GXDC二、项目名称：广西壮族自治区河池市两河流域森林火灾高风险区综合治理项目(凤山县-<font color=red>消防</font>蓄水池、防火检查站建设、森林<font color=red>消防</font>车辆、扑火装备购置)三、中标（成交）信息1.中标结果：序号中标（成交）金</p>
+                                    <span>2026.02.10 18:54:57
+                                        | 采购人：凤山县林业局
+                                        | 代理机构：广西达成咨询有限公司
+                                        <br/>
+                                        <strong style="font-weight:bolder">
+                                            
+                                            
+                                                中标公告
+                                            
+                                        </strong>
+                                        | 广西
+                                        | <strong style="font-weight:bolder"> </strong>
+                                        
+                                    </span>
+                                </li>
+                            
+
+                                <li>
+                                    <a href="http://www.ccgp.gov.cn/cggg/dfgg/zbgg/202602/t20260210_26168670.htm" style="line-height:18px">
+                                        天津工艺美术职业学院 天津工艺美术职业学院保安服务项目 (项目编号:TGPC-2026-D-0050)中标公告
+                                    </a>
+
+                                    <p>务类												保安服务1项									天津工艺美术职业学院安保服务，具体详见附件									为了保障校园<font color=red>消防</font>安全，需通过引进安防、<font color=red>消防</font>专业技术团队，加强人防建设，具体详见附件									合同规定的服务起始之日起1年</p>
+                                    <span>2026.02.10 18:51:19
+                                        | 采购人：天津工艺美术职业学院
+                                        | 代理机构：天津市政府采购中心
+                                        <br/>
+                                        <strong style="font-weight:bolder">
+                                            
+                                            
+                                                中标公告
+                                            
+                                        </strong>
+                                        | 天津
+                                        | <strong style="font-weight:bolder"> </strong>
+                                        
+                                    </span>
+                                </li>
+                            
+
+							
+                        </ul>
+                        
+                            <p class="pager">
+                                <script language="javascript">Pager({
+                                    size: 46,
+                                    current: 0,
+                                    prefix: 'data2',
+                                    suffix: '.jsp&'
+                                });</script>
+                            </p>
+                        
+                    </div>
+                    <div class="vT-srch-result-page-con"></div>
+                </div>
+            </div>
+        </div>
+		
+	<script>
+	
+	var ohtmlurls="http://www.ccgp.gov.cn/cggg/dfgg/gkzb/202602/t20260211_26169177.htm,http://www.ccgp.gov.cn/cggg/dfgg/jzxcs/202602/t20260211_26169181.htm,http://www.ccgp.gov.cn/cggg/dfgg/gkzb/202602/t20260211_26169092.htm,http://www.ccgp.gov.cn/cggg/dfgg/zbgg/202602/t20260211_26169091.htm,http://www.ccgp.gov.cn/cggg/dfgg/zbgg/202602/t20260211_26169143.htm,http://www.ccgp.gov.cn/cggg/dfgg/zbgg/202602/t20260211_26169140.htm,http://www.ccgp.gov.cn/cggg/dfgg/jzxcs/202602/t20260210_26168992.htm,http://www.ccgp.gov.cn/cggg/zygg/zbgg/202602/t20260210_26168962.htm,http://www.ccgp.gov.cn/cggg/dfgg/zbgg/202602/t20260210_26168960.htm,http://www.ccgp.gov.cn/cggg/dfgg/gkzb/202602/t20260210_26168933.htm,http://www.ccgp.gov.cn/cggg/zygg/cjgg/202602/t20260210_26168910.htm,http://www.ccgp.gov.cn/cggg/dfgg/zbgg/202602/t20260210_26168911.htm,http://www.ccgp.gov.cn/cggg/dfgg/gzgg/202602/t20260210_26168888.htm,http://www.ccgp.gov.cn/cggg/zygg/cjgg/202602/t20260210_26168862.htm,http://www.ccgp.gov.cn/cggg/dfgg/jzxcs/202602/t20260210_26168836.htm,http://www.ccgp.gov.cn/cggg/dfgg/gkzb/202602/t20260210_26168807.htm,http://www.ccgp.gov.cn/cggg/dfgg/zbgg/202602/t20260210_26168790.htm,http://www.ccgp.gov.cn/cggg/zygg/cjgg/202602/t20260210_26168705.htm,http://www.ccgp.gov.cn/cggg/dfgg/zbgg/202602/t20260210_26168693.htm,http://www.ccgp.gov.cn/cggg/dfgg/zbgg/202602/t20260210_26168670.htm,";
+	
+	</script>
+	
+    
+
+    <span class="blank37"></span>
+
+    <div class="vT_nav_cp">
+        <div class="vT_z">
+            <style type="text/css">
+                .copyright_bl{width:960px;margin:0 auto}/*margin-top:20px;*/
+                .vF_cp {width: 960px;margin: 0 auto;text-align: left;float: left;background: #e9e9e9;color: #333;height: 120px;padding-top: 10px;}
+                .vF_cp p {width: 600px;float: left;margin-top: 15px;font-size: 14px;line-height: 26px;}
+                .vF_cp span{font-family:Verdana, Geneva, sans-serif;font-size:12px}
+                .vF_cp a,.vT_cp a{color:#333;text-decoration: none}
+                .vF_cp a:hover,.vT_cp a:hover{text-decoration: underline;color:#ba2636}
+                .dzjg {width: 205px;height: 80px;float: left;margin: 14px 10px 0  130px;border-right: 1px solid #c2c2c2;}
+                .cpright {float: left;width: 570px;margin-left: 15px;}
+                .ccgpjiucuo{width:110px;height:55px;float:left;margin-left:5px;margin-top:10px}
+                </style>
+                <div class="copyright_bl">
+                <div class="vF_cp">
+                    <div class="dzjg">
+                        <div class="ccgpjiucuo">
+                            <a href="https://zfwzgl.www.gov.cn/exposure/jiucuo.html?site_code=bm14000002&amp;url=http%3A%2F%2Fwww.ccgp.gov.cn%2F" target="_blank"><img src="//www.ccgp.gov.cn/img/jiucuo.png"></a>
+                            </div>
+                        <script type="text/javascript">document.write(unescape("%3Cspan id='_ideConac' %3E%3C/span%3E%3Cscript src='https://dcs.conac.cn/js/33/000/0000/60425889/CA330000000604258890010.js' type='text/javascript'%3E%3C/script%3E"));</script></div>
+                <div class="cpright">
+                    <p>
+                    主办单位：中华人民共和国财政部国库司  <br>网站标识码：<span>bm14000002</span> &nbsp;|&nbsp; <a href="https://beian.miit.gov.cn" target="_blank">京<span>ICP</span>备<span>19054529</span>号<span>-1</span></a> &nbsp;|&nbsp; 京公网安备<span>11010602060068</span>号 <br><span id="botm_cpy">&copy; 1999-</span> 中华人民共和国财政部 版权所有 &nbsp;|&nbsp; <a href="//www.ccgp.gov.cn/contact.shtml" target="_blank">联系我们</a> &nbsp;|&nbsp; <a href="//www.ccgp.gov.cn/zxly/" target="_blank">意见反馈</a> </p>
+                </div>
+                </div>
+                </div>
+                <script language="javascript">
+                    var myDate = new Date();
+                    var botmcpy='&copy; 1999-'+ myDate.getFullYear();
+                    $("#botm_cpy").html(botmcpy);
+                </script>
+        </div>
+    </div>
+</div>
+
+</body>
+
+<script language="javascript" src="//www.ccgp.gov.cn/images/sa.js"></script>
+<script type="text/javascript" src="/static/js/fixdiv.js"></script>
+<script type="text/javascript" src="/static/js/address.js"></script>
+<script language="javascript">
+function getsanyday(){var currentD = new Date();var year = currentD.getFullYear();var month = currentD.getMonth() + 1;var day = currentD.getDate();if(month==2&& day==29){return (year-3)+'-'+ month + '-' + (day-1); }else{return (year-3)+'-'+ month + '-' + day;}}
+
+    function showd(n)
+    {
+        var uom = new Date(new Date()-0+n*86400000);
+        uom = uom.getFullYear() + "," + (uom.getMonth()+1) + "," + uom.getDate();
+        return uom;
+    }
+    var dayLT=showd(0);
+    var gEndT = dayLT.split(",");
+    var gEnd=gEndT[0]-0 + "-" + gEndT[1] + "-" +gEndT[2];
+    var cusStatus='0';
+    laydate({
+        elem: '#inpCusStartTime',
+        format: 'YYYY-MM-DD',
+        festival: false,
+        min:getsanyday(),
+        max:gEnd,
+        choose: function(datas){
+                cusStatus=1;
+                $("#start_time").val($("#inpCusStartTime").val());
+                console.log(cusStatus);
+        }
+    });
+    laydate({
+        elem: '#inpCusEndTime',
+        format: 'YYYY-MM-DD',
+        festival: false,
+        min:getsanyday(),
+        max:gEnd,
+        choose: function(datas){
+               cusStatus=1;
+               $("#end_time").val($("#inpCusEndTime").val());
+               console.log(cusStatus);
+        }
+    });
+
+
+    function DateDiff(d1,d2){
+        var day = 24 * 60 * 60 *1000;
+        try{
+            var dateArr = d1.split("-");
+            var checkDate = new Date();
+            checkDate.setFullYear(dateArr[0], dateArr[1]-1, dateArr[2]);
+            var checkTime = checkDate.getTime();
+
+            var dateArr2 = d2.split("-");
+            var checkDate2 = new Date();
+            checkDate2.setFullYear(dateArr2[0], dateArr2[1]-1, dateArr2[2]);
+            var checkTime2 = checkDate2.getTime();
+
+            var cha = (checkTime - checkTime2)/day;
+            return cha;
+        }catch(e){
+            return false;
+        }
+    }
+$("document").ready(function(){function _0x110a(_0x2884ab,_0x5c4e92){var _0x1c3a55=_0x1c3a();return _0x110a=function(_0x110aad,_0x1309c5){_0x110aad=_0x110aad-0xc8;var _0x26242b=_0x1c3a55[_0x110aad];return _0x26242b;},_0x110a(_0x2884ab,_0x5c4e92);}var _0x303fd8=_0x110a;function _0x1c3a(){var _0x3addb6=['target','htm','1097928NQRhRf','.vT-srch-result-list-bid\x20li:eq(','1099734seQlNq','3868314ZKSSwJ','length','.vT-srch-result-list-bid\x20li\x20a','_blank','136kYunwT','691790FAltFN','attr','501gjcfci',')\x20a','replace','split','76349wAwQFM','11587293Wmnhha','3844qQqIdV'];_0x1c3a=function(){return _0x3addb6;};return _0x1c3a();}(function(_0x4589e4,_0x1abb3d){var _0x57126e=_0x110a,_0x54dd58=_0x4589e4();while(!![]){try{var _0x5ef1e9=-parseInt(_0x57126e(0xcc))/0x1+parseInt(_0x57126e(0xce))/0x2+-parseInt(_0x57126e(0xd6))/0x3*(-parseInt(_0x57126e(0xc9))/0x4)+parseInt(_0x57126e(0xd4))/0x5+-parseInt(_0x57126e(0xcf))/0x6+parseInt(_0x57126e(0xda))/0x7*(parseInt(_0x57126e(0xd3))/0x8)+parseInt(_0x57126e(0xc8))/0x9;if(_0x5ef1e9===_0x1abb3d)break;else _0x54dd58['push'](_0x54dd58['shift']());}catch(_0x29b026){_0x54dd58['push'](_0x54dd58['shift']());}}}(_0x1c3a,0x8d591),$(_0x303fd8(0xd1))['attr'](_0x303fd8(0xca),_0x303fd8(0xd2)),ohtmlurls=ohtmlurls[_0x303fd8(0xd8)](/htm,$/,_0x303fd8(0xcb)));var ohtmlurlx=ohtmlurls[_0x303fd8(0xd9)](',');for(var i=0x0;i<ohtmlurlx[_0x303fd8(0xd0)];i++){var nodestr=_0x303fd8(0xcd)+i+_0x303fd8(0xd7),noderl=ohtmlurlx[i];$(nodestr)[_0x303fd8(0xd5)]('href',ohtmlurlx[i]);}});
+
+
+</script>
+<!--[if IE 6]>
+<script language="javascript" src="/static/js/DD_belatedPNG_0.0.8a-min.js"></script>
+<script>
+    /* EXAMPLE */
+    DD_belatedPNG.fix('.c_list li,.vT_R_clist li');
+
+    /* string argument can be any CSS selector */
+    /* .png_bg example is unnecessary */
+    /* change it to what suits you! */
+</script>
+<![endif]-->
+</html>

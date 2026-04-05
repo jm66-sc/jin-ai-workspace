@@ -1,0 +1,41 @@
+# SmartScout - 依赖清单
+# 技术栈锁定：以下库版本不得擅自更改
+
+# 核心爬虫引擎 (必须使用，禁止替换)
+# ⚠️⚠️⚠️ 紧急变更：废弃 v0.6.3，升级到 v0.8.x+ ⚠️⚠️⚠️
+# 【变更原因】v0.6.3 不支持 strategy="dynamic"，导致方法论完全错误
+# 【Python要求】v0.8.x+ 需要 Python 3.10+，必须升级Python环境
+# 【正确用法】crawler.crawl(url, strategy="dynamic", wait_for=".list-item")
+# crawl4ai==0.6.3  # ⚠️ 已废弃！抓取质量归零！
+crawl4ai>=0.8.0
+
+# SSL证书处理（必须安装，禁止绕过SSL验证）
+# 【重点】解决SSL证书问题，禁止使用 ignore_https_errors=True 绕过
+certifi>=2024.12.14
+
+# Web界面框架 (必须使用，禁止替换)
+streamlit>=1.28.0
+
+# DeepSeek API客户端 (OpenAI兼容)
+openai>=1.0.0
+
+# 数据库操作 (SQLite内置，但需要连接库)
+# Python内置sqlite3，无需额外安装
+
+# 配置文件解析
+pyyaml>=6.0
+
+# 进度显示
+tqdm>=4.66.0
+
+# 数据导出
+pandas>=2.0.0
+
+# 开发工具 (可选)
+black>=23.0.0
+pytest>=7.0.0
+
+# 环境管理说明：
+# 1. 建议使用虚拟环境: python -m venv venv
+# 2. 激活后安装: pip install -r requirements.txt
+# 3. API Key配置在 config/secrets.yaml，不要硬编码
