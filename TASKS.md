@@ -1,6 +1,6 @@
 # 任务清单
 
-> 最后更新：2026-04-04 | 更新者：Claude
+> 最后更新：2026-04-05 14:30 | 更新者：Claude
 
 ---
 
@@ -8,7 +8,8 @@
 
 | ID | 执行者 | 任务描述 | 优先级 | 输出位置 |
 |----|--------|---------|--------|---------|
-| T003 | 金龙 | 【第一层·能力摸底】阅读 briefs/capability-questions-金龙.md，逐条如实回答，填写到 briefs/capability-report-金龙.md | 🔥最高 | briefs/capability-report-金龙.md |
+| T008 | 金龙 | 【验证测试·14:40执行】将本地爬虫工具文件夹内容上传到仓库 tools/crawler-金龙/ 目录，git push | 🔥最高 | tools/crawler-金龙/ |
+| T009 | 麦龙 | 【验证测试·14:45执行】从仓库拉取 tools/crawler-金龙/ 目录，确认文件已到位，回复确认 | 🔥最高 | 回复确认即可 | 【第一层·能力摸底】阅读 briefs/capability-questions-金龙.md，逐条如实回答，填写到 briefs/capability-report-金龙.md | 🔥最高 | briefs/capability-report-金龙.md |
 | T004 | 麦龙 | 【第一层·能力摸底】阅读 briefs/capability-questions-麦龙.md，逐条如实回答，填写到 briefs/capability-report-麦龙.md | 🔥最高 | briefs/capability-report-麦龙.md |
 | T005 | 金龙 | 【第二层·工具盘点】列出本地爬虫工具和自动化收集器的目录结构、可执行命令、当前状态，填写到 tools/inventory-金龙.md | 高 | tools/inventory-金龙.md |
 | T006 | 麦龙 | 【第二层·工具盘点】列出云端爬虫工具和自动化收集器的目录结构、可执行命令、当前状态，填写到 tools/inventory-麦龙.md | 高 | tools/inventory-麦龙.md |
