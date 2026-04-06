@@ -66,3 +66,62 @@
 ---
 
 _金龙 Agent | 2026-04-07 02:10_
+
+---
+
+## 补充：Boss 三个问题的答复（02:21）
+
+### ① 网页搜索工具
+
+**当前状态：**
+- `web_search`（Brave Search）：❌ 未配置 API Key，不可用
+- `online-search`（ProSearch）：Skill 存在于系统中，但需要调用测试
+- `multi-search-engine`：Skill 存在于系统中，支持17个搜索引擎
+- `web_fetch`：✅ 可用，能抓取网页内容
+- `browser` 工具：✅ 可用，能操作浏览器
+- `curl`：✅ 可用，但当前网络（无代理）对部分站点超时
+
+**结论：有搜索能力，但不是完美的"直接搜"。** 最靠谱的是 web_fetch 抓页面 + browser 操作。
+
+### ② 成都建工集团招标入口
+
+**搜索结果：** 当前网络状况差（代理流量超限，直连不稳定），搜索引擎全部超时。
+
+**已尝试的域名（全部失败）：**
+- www.cdcg.com.cn → DNS 解析失败
+- www.cdcgjt.com → 超时
+- www.cdceec.com → 超时
+- www.cdcg-group.com → 超时
+- www.chengdujian.com → 超时
+- www.scegc.com.cn → 404（四川华西？但页面不存在）
+
+**建议：**
+1. 等网络恢复后用 multi-search-engine 搜索
+2. 或让麦龙在云端搜索成都建工/华西的招标采购平台 URL
+3. 已知可能的招标平台：四川建设网、四川政府采购网、中国采购与招标网
+
+### ③ 能否定制 Agent 角色（代理参谋长）
+
+**可以！** OpenClaw 原生支持 Multi-Agent Routing：
+
+- 每个 Agent 有独立的 **workspace**（SOUL.md/AGENTS.md 等）、**agentDir**、**sessions**
+- 通过 `agents.list` 配置多个 agent，每个有自己的 ID
+- 每个 agent 可以有自己的 SOUL.md（角色性格）、USER.md、技能、模型配置
+- Channel binding 可以将不同渠道路由到不同 agent
+
+**创建"代理参谋长"角色的流程：**
+1. 创建独立 workspace（如 `~/.openclaw/workspace-chief`）
+2. 写 SOUL.md 定义角色（参谋长人格、职责、决策风格）
+3. 写 AGENTS.md 定义行为规则
+4. 在 `openclaw.json` 中添加 `agents.list` 条目
+5. 通过 channel binding 或 `sessions_send` 与其通信
+6. 也可以用 `sessions_spawn` 临时创建子 agent 执行任务
+
+**当前已有的子 agent 能力：**
+- `sessions_spawn` — 可以生成隔离的子 agent（不同模型、不同 workspace）
+- `subagents` — 管理子 agent（列表/终止/引导）
+- 子 agent 继承父 workspace，可以用不同的 thinking/model
+
+---
+
+_补充于 2026-04-07 02:25_
