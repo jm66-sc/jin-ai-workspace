@@ -8,8 +8,9 @@
 
 | ID | 执行者 | 任务描述 | 优先级 | 输出位置 |
 |----|--------|---------|--------|---------|
-| T013 | 金龙 | 【完整说明见 briefs/t013-金龙任务说明.md】① 检查Mac上Python版本，找到3.10+路径 ② 修复SmartScout producer.py的page_num bug（2行代码） ③ 用视觉AI模拟人打开浏览器，找到ccgp.gov.cn招标公告列表页URL（无需注册） ④ 同样方式找成都建工集团或成都华西集团的招标入口（需注册但无门槛则自行注册，有门槛则报告等Boss协助） ⑤ 用undetected模式爬取列表页，每来源20条以上，输出JSON ⑥ 自验证后推送GitHub | 🔥最高 | intel/raw-list-ccgp.json + intel/raw-list-成都建工.json + briefs/t013-report.md |
-| T014 | 麦龙 | 【完整说明见 briefs/t014-麦龙任务说明.md】等T013完成后执行。① 读取金龙的raw-list JSON ② AI筛选标题（保留：消防/机电/楼控/暖通/弱电；排除：土建/装修/施工） ③ 用extract_content_from_websites读取筛选后的详情页 ④ 输出结构化表格到intel/filtered-results.md ⑤ 微信通知Boss结果摘要 | 🔥最高 | intel/filtered-results.md + 微信通知Boss |
+| T013 | 金龙 | 【完整说明见 briefs/t013-金龙任务说明.md v2】① 检查Python 3.10+版本 ② 修复producer.py bug（2行） ③ 视觉AI模拟人操作找ccgp.gov.cn和成都建工/华西集团的招标列表页URL ④ 爬列表页全量数据 ⑤ 一次批量AI调用做第一层筛选（黑/白/灰三类），输出 intel/queue-*.json ⑥ 完成后写通知到 state/wechat-notify.md | 🔥最高 | intel/queue-ccgp.json + intel/queue-成都建工.json + briefs/t013-report.md |
+| T014 | 麦龙 | 【完整说明见 briefs/t014-麦龙任务说明.md v2】等T013完成后执行。① 打开队列中每条URL（3-5秒间隔） ② 语义判断是否入库（设备采购/改造/分包=入；消防车/纯施工=丢） ③ 提取12个结构化字段 ④ 输出 intel/filtered-results.md ⑤ 微信通知Boss结果 | 🔥最高 | intel/filtered-results.md + 微信通知Boss |
+| T015 | 麦龙 | 【调研2025年新招标爬虫工具】上次调研只找到了2023年及以前的项目。请重点搜索2025年发布或大幅更新的招标/政府采购相关开源项目，Stars数量可能有几百到上千。搜索关键词：① "招标 爬虫 2025 github" ② "政府采购 监控 2025" ③ "bidding spider 2025 github" ④ "中国招标 API 2025"。找到后报告名称、Stars、功能、是否适合装给金龙使用。结果写入 intel/github-bidding-2025.md | 高 | intel/github-bidding-2025.md |
 | T010 | 麦龙 | 【链路验证·15:10定时执行】git pull 拉取仓库，确认 tools/crawler-金龙/ 文件存在，然后通过微信通知 Boss："链路验证完成✅ 金龙的文件已到位，整条链路通了。" | 🔥最高 | 微信通知Boss |
 | T005 | 金龙 | 【第二层·工具盘点】列出本地爬虫工具和自动化收集器的目录结构、可执行命令、当前状态，填写到 tools/inventory-金龙.md | 高 | tools/inventory-金龙.md |
 | T006 | 麦龙 | 【第二层·工具盘点】列出云端爬虫工具和自动化收集器的目录结构、可执行命令、当前状态，填写到 tools/inventory-麦龙.md | 高 | tools/inventory-麦龙.md |
