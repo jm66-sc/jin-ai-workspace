@@ -1,6 +1,15 @@
 # 任务清单
 
-> 最后更新：2026-04-05 15:00 | 更新者：Claude
+> 最后更新：2026-04-06 | 更新者：Claude
+
+---
+
+## ⚡ 紧急 — D001 讨论回复（请立即处理）
+
+**金龙**：请读取 `briefs/d001-agent-workflow-discussion.md`，回复到 `briefs/d001-reply-金龙.md`
+重点回答：① SmartScout 的 producer-consumer bug 在哪 ② 能否封装独立爬取脚本 ③ 环境依赖是否就绪
+
+**麦龙**：请执行 T012（见下），搜索 GitHub 招标爬虫开源项目，结果写入 `intel/github-bidding-crawlers.md`
 
 ---
 
@@ -8,6 +17,7 @@
 
 | ID | 执行者 | 任务描述 | 优先级 | 输出位置 |
 |----|--------|---------|--------|---------|
+| T012 | 麦龙 | 【GitHub调研】用 batch_web_search 搜索以下关键词，找出 Stars 较多、近2年有更新的招标/政府采购爬虫开源项目：① "ccgp.gov.cn crawler github" ② "政府采购 爬虫 github" ③ "招标 spider python github" ④ "bidding crawler china github"。对每个项目报告：名称、链接、Stars、功能（尤其是能否自动发现列表页URL、能否区分官网vs聚合站）、技术栈、最后更新时间。结论：推荐1-2个值得金龙本地安装的项目。 | 🔥最高 | intel/github-bidding-crawlers.md |
 | T010 | 麦龙 | 【链路验证·15:10定时执行】git pull 拉取仓库，确认 tools/crawler-金龙/ 文件存在，然后通过微信通知 Boss："链路验证完成✅ 金龙的文件已到位，整条链路通了。" | 🔥最高 | 微信通知Boss |
 | T005 | 金龙 | 【第二层·工具盘点】列出本地爬虫工具和自动化收集器的目录结构、可执行命令、当前状态，填写到 tools/inventory-金龙.md | 高 | tools/inventory-金龙.md |
 | T006 | 麦龙 | 【第二层·工具盘点】列出云端爬虫工具和自动化收集器的目录结构、可执行命令、当前状态，填写到 tools/inventory-麦龙.md | 高 | tools/inventory-麦龙.md |
