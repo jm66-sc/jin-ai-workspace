@@ -312,6 +312,9 @@ class Producer:
         crawler = AsyncWebCrawler(config=self.config)
         all_items = []
 
+        # 修复 max_pages=0 边界问题
+        page_num = 0
+
         try:
             # 依次爬取每一页
             for page_num in range(1, self.max_pages + 1):
