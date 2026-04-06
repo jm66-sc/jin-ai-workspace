@@ -1,110 +1,117 @@
-# 工具盘点 - 金龙
+# 金龙本地工具盘点
 
 > 盘点日期：2026-04-06 | 盘点者：金龙
 
 ---
 
-## 一、本地爬虫工具
+## 一、工具目录
 
-### 1.1 爬虫工具目录
-
-**位置：** `~/Desktop/爬虫工具/`
-
-| 文件/目录 | 类型 | 说明 |
-|-----------|------|------|
-| SmartScout/ | 目录 | 主要爬虫工具 |
-| SmartScout.app | 应用程序 | macOS 应用版 |
-| Start-SmartScout.command | 脚本 | 启动脚本 |
-| 启动说明.txt | 文档 | 使用说明 |
-| 第一批收口封板报告_20260317.md | 文档 | 历史报告 |
-
-**当前状态：** 可用
+```
+~/Desktop/爬虫工具/
+├── SmartScout/          # 主要爬虫项目
+├── SmartScout.app/      # macOS 应用
+├── Start-SmartScout.command  # 启动脚本
+├── 启动说明.txt         # 启动说明
+└── 第一批收口封板报告_20260317.md  # 历史报告
+```
 
 ---
 
-### 1.2 自动化收集器目录
+## 二、SmartScout 详细结构
 
-**位置：** `~/Desktop/自动化收集器/`
+### 2.1 核心文件
 
-#### 核心脚本
+| 文件/目录 | 说明 | 状态 |
+|----------|------|------|
+| main.py | 主程序入口 | 可执行 |
+| run.py | 运行脚本 | 可执行 |
+| start.sh | Shell 启动脚本 | 可执行 |
+| requirements.txt | Python 依赖 | 需检查 |
 
-| 文件 | 功能 | 状态 |
-|------|------|------|
-| mp_monitor.py | 公众号监控 | 可用 |
-| books_ocr_task.py | 书籍 OCR 任务 | 可用 |
-| run_30_initial_reading.py | 批量初读（30条） | 可用 |
-| run_5_sample.py | 样本测试（5条） | 可用 |
-| run_batch_initial_reading.py | 批量初读（批量） | 可用 |
-| run_optimized_verification.py | 优化验证 | 可用 |
-| sample_gongkong_forum.py | 工控论坛采样 | 可用 |
-| sample_gongkongwang.py | 工控网采样 | 可用 |
+### 2.2 核心模块
 
-#### 数据目录
-
-| 目录 | 内容 |
+| 目录 | 说明 |
 |------|------|
-| data/ | 运行数据存储 |
-| logs/ | 运行日志 |
-| scripts/ | 辅助脚本 |
-| config/ | 配置文件 |
+| src/ | 源代码 |
+| api/ | API 接口封装 |
+| core/ | 核心逻辑 |
+| config/ | 配置 |
+| services/ | 服务 |
+| utils/ | 工具函数 |
+| scripts/ | 脚本 |
 | docs/ | 文档 |
-| wechat-article-exporter/ | 公众号文章导出器 |
-| archive/ | 归档文件 |
-| experiments/ | 实验性代码 |
+| frontend/ | 前端 |
+| electron/ | Electron 桌面端 |
 
-#### 数据文件
+### 2.3 数据目录
 
-| 文件 | 说明 |
+| 目录 | 说明 |
 |------|------|
-| sample_list.json | 样本列表（原始） |
-| sample_list_clean.json | 样本列表（清洗后） |
-| sample_list_v2.json | 样本列表（v2） |
-| mp_monitor_accounts.json | 监控的公众号账号 |
+| data/ | 爬取数据 |
+| logs/ | 运行日志 |
+| venv/ | Python 虚拟环境 |
 
 ---
 
-## 二、可执行命令
+## 三、可执行命令
 
-### 启动 SmartScout
+### 3.1 启动命令
 
 ```bash
-# 方式1：命令行
-cd ~/Desktop/爬虫工具/SmartScout
-python3 main.py
+# 方式1: Shell 脚本
+cd ~/Desktop/爬虫工具/SmartScout/
+./start.sh
 
-# 方式2：快捷脚本
+# 方式2: 桌面快捷方式
 open ~/Desktop/爬虫工具/Start-SmartScout.command
+open ~/Desktop/爬虫工具/SmartScout.app
+
+# 方式3: Python 直接运行
+cd ~/Desktop/爬虫工具/SmartScout/
+python3 main.py
+python3 run.py
 ```
 
-### 运行自动化收集器
+### 3.2 测试命令
 
 ```bash
-# 进入目录
-cd ~/Desktop/自动化收集器/
+# 环境检查
+python3 check_environment.py
 
-# 运行监控
-python3 mp_monitor.py
-
-# 运行批量初读
-python3 run_batch_initial_reading.py
-
-# 运行样本测试
-python3 run_5_sample.py
+# 运行测试
+python3 test_simple.py
+python3 test_api.py
+python3 run_test.py
 ```
 
 ---
 
-## 三、工具能力总结
+## 四、当前状态
 
-| 能力 | 支持情况 |
-|------|----------|
-| 公众号文章抓取 | ✅ 支持 |
-| 工控网站采样 | ✅ 支持 |
-| 批量 OCR | ✅ 支持 |
-| 定时监控 | ✅ 支持 |
-| 数据清洗 | ✅ 支持 |
-| 日志记录 | ✅ 支持 |
+### 4.1 最后运行时间
+- 最后运行：2026-03-23
+- 最后数据：extracted_items.json
+
+### 4.2 已知问题
+- 爬取速度受限
+- 部分网站需要代理
+- 长时间运行可能有反爬问题
+
+### 4.3 依赖环境
+- Python 3.x
+- Selenium
+- Playwright
+- Chromium/Electron
+- Node.js (前端/桌面端)
 
 ---
 
-**盘点完成时间：** 2026-04-06 15:35
+## 五、输出位置
+
+- 爬取数据：`data/` 目录
+- 运行日志：`logs/` 目录
+- 结果文件：`scout_result.json`、`extracted_items.json`
+
+---
+
+**盘点完成**
