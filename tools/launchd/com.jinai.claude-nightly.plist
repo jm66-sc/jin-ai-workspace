@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <key>Label</key>
+    <string>com.jinai.claude-nightly</string>
+
+    <key>ProgramArguments</key>
+    <array>
+        <string>/bin/bash</string>
+        <string>-c</string>
+        <string>cd /Users/jin/Desktop/jin-ai-workspace &amp;&amp; git pull &amp;&amp; /usr/local/bin/claude --print --dangerously-skip-permissions "$(cat system-rules/daily-report.md)" &gt;&gt; /tmp/claude-nightly.log 2&gt;&amp;1</string>
+    </array>
+
+    <!-- 每日 22:30 触发 -->
+    <key>StartCalendarInterval</key>
+    <dict>
+        <key>Hour</key><integer>22</integer>
+        <key>Minute</key><integer>30</integer>
+    </dict>
+
+    <key>WorkingDirectory</key>
+    <string>/Users/jin/Desktop/jin-ai-workspace</string>
+
+    <key>StandardOutPath</key>
+    <string>/tmp/claude-nightly.log</string>
+
+    <key>StandardErrorPath</key>
+    <string>/tmp/claude-nightly-error.log</string>
+
+    <key>KeepAlive</key>
+    <false/>
+
+    <key>RunAtLoad</key>
+    <false/>
+</dict>
+</plist>
