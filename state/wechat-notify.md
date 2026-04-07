@@ -1,15 +1,19 @@
-[金龙] T013完成，已爬取ccgp.gov.cn（消防设备+机电设备+楼宇自控），队列共95条，请麦龙启动T014
+[金龙] T013国企平台爬取完成
 
-队列文件：intel/queue-ccgp.json
-说明：
-- 白名单（confirmed）：36条
-- 灰名单（pending）：59条
-- 详细报告：briefs/t013-report.md
+爬取平台：
+- 华西云采：125条
+- 蜀道集团招标平台：32条
+- 成都建工成建e采：0条（需登录）
 
-**补充：国企招标入口已找到**
-- 成都建工：成建e采 https://www.cjebuy.com/
-- 四川华西：华西云采 https://www.hxyc.com.cn/
-- 蜀道集团：https://zb.shudaojt.com/
-- 详见：intel/国企招标入口汇总.md
+筛选结果：
+- 黑名单丢弃：48条
+- 白名单确认：13条
+- 灰名单待定：92条
+- 入队总数：105条
 
-待爬取（需确认是否继续）。
+队列文件：
+- intel/queue-ccgp.json（95条）
+- intel/queue-国企.json（105条）
+- 总计200条待麦龙处理
+
+详细报告：briefs/t013-report.md
