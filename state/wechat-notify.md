@@ -6,4 +6,10 @@
 - 灰名单（pending）：59条
 - 详细报告：briefs/t013-report.md
 
-成都建工/华西集团未完成（网站无法访问），待网络恢复后补充。
+**补充：国企招标入口已找到**
+- 成都建工：成建e采 https://www.cjebuy.com/
+- 四川华西：华西云采 https://www.hxyc.com.cn/
+- 蜀道集团：https://zb.shudaojt.com/
+- 详见：intel/国企招标入口汇总.md
+
+待爬取（需确认是否继续）。
