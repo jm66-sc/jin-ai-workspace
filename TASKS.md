@@ -1,6 +1,6 @@
 # 任务清单
 
-> 最后更新：2026-04-07 | 更新者：Claude（T019：AI学习追踪体系调研）
+> 最后更新：2026-04-08 | 更新者：Claude（T021/T022：共创学习体系启动）
 
 ---
 
@@ -8,6 +8,9 @@
 
 | ID | 执行者 | 任务描述 | 优先级 | 输出位置 |
 |----|--------|---------|--------|---------|
+| T021 | 金龙 | 【共创学习体系·iMA建库】① 在 iMA 建一个顶层文件夹"AI学习知识库"（不建子文件夹，保持简洁）② 确认麦龙是否有写入权限（或者金龙统一代为推送）③ 把 `共创资料池/中心思想卡片/2026-04/卡片-01-孟健-AI站前端不像AI.md`（等Boss+Claude批注完成后）推送到 iMA 作为第一张入库卡片 ④ 完成后更新 `state/agent-status.md` | 高 | iMA "AI学习知识库"文件夹 |
+| T022 | 金龙 | 【共创学习体系·海外源监控，代理恢复后执行】参考 `briefs/t020-优质信息源清单.md`，① YouTube：订阅 AI超元域中文、Andrej Karpathy、LangChain 官方频道，开启更新通知 ② Twitter/X：关注 @AnthropicAI、@karpathy、@real_kai42、@xingpt，有重要更新时存入 `共创资料池/原文存档/YYYY-MM/` ③ 完成后微信通知 Boss | 高（代理恢复后立即执行） | 共创资料池/原文存档/ + 微信通知 |
+| T023 | 麦龙 | 【共创学习体系·日常采集，滚动执行】按照 `SOP-共创学习体系.md` v2 流程，每天从指定信息源采集约10条内容：① 原文存入 `共创资料池/原文存档/YYYY-MM/` ② 同步生成中心思想卡片存入 `共创资料池/中心思想卡片/YYYY-MM/`（格式严格按SOP模板，含【Boss认知】【Claude认知】留空栏）③ 微信告知 Boss 今天卡片已就绪 ④ 来源参考 t020 国内源清单。**本任务为滚动执行，不设截止日期。** | 滚动 | 共创资料池/ |
 | ~~T019~~ ✅ | 麦龙 | 【AI学习追踪体系·调研报告】Boss希望建立一套AI新技术的持续监控+学习路径体系。请做调研并输出方案，回答以下问题：① **信息源清单**：哪些平台/账号/频道值得监控（按可访问性分两类：麦龙能直接访问的国内源 vs 需要金龙+代理才能访问的海外源）② **监控主线**：重点关注以下方向——Claude Code终端应用新技巧/新案例/创业案例、OpenClaw与国内AI Coding工具新用法、GitHub高热度Agent/AI工具开源项目、AI Agent新框架和新范式③ **每日推送方案**：每天推送10条，格式建议（标题+来源+1句话价值判断+推荐理由）④ **知识库建设路径**：Boss勾选后如何归档，如何形成学习优先级（强烈推荐亲读 vs 了解即可 vs 可实践）⑤ **分工建议**：麦龙负责哪些收集，金龙负责哪些（海外YouTube/Twitter/英文博客等）。输出调研报告到 `briefs/t019-AI学习追踪体系调研.md`，然后微信通知Boss完成。 | 高 | briefs/t019-AI学习追踪体系调研.md + 微信通知 |
 | T018 | 麦龙 | 【滚动小批量·有空就跑】T017因资源限制未能批量跑通，改为每次10篇的小批量模式。**第1批（2026-04-07）：✅ 10篇完成（剑指工控）**
 | T018备注 | 麦龙 | 【第1批完成】10篇，剩余750篇待处理，目标：每次有空就跑一批·有空就跑】T017因资源限制未能批量跑通，改为每次10篇的小批量模式。**规则：每次有空闲时间就执行一轮，不强求连续。** ① git pull content-pipeline，读取 `collector/data/standard_docs/` 下文章JSON ② 跳过 `collector/data/initial_reading_production/results/` 中已有 doc_id 的 ③ 取下一批10篇做AI初读，字段：`doc_id`/`article_type`/`value_score`(0-10)/`worth_deep_read`/`summary_short`(50字以内)/`topic_tags`/`suggested_bucket` ④ 输出追加到 `collector/data/initial_reading_production/results/batch_麦龙_YYYYMMDD_NNN.json` ⑤ commit+push（commit message：`麦龙：初读 第NNN批 10篇`） ⑥ 更新 `jin-ai-workspace/state/agent-status.md` 的计数。**目标：慢慢积累，测试质量，不用一次跑完。总量约3,410篇，每批10篇，慢慢来。** | 滚动 | content-pipeline/collector/data/initial_reading_production/results/ |
