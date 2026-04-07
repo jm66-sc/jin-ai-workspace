@@ -1,117 +1,146 @@
 # 金龙本地工具盘点
 
-> 盘点日期：2026-04-06 | 盘点者：金龙
+> 更新时间：2026-04-07 16:20
 
 ---
 
-## 一、工具目录
+## 1. SmartScout（招标爬虫）
 
-```
-~/Desktop/爬虫工具/
-├── SmartScout/          # 主要爬虫项目
-├── SmartScout.app/      # macOS 应用
-├── Start-SmartScout.command  # 启动脚本
-├── 启动说明.txt         # 启动说明
-└── 第一批收口封板报告_20260317.md  # 历史报告
-```
+**位置：** `~/Desktop/爬虫工具/SmartScout/`
 
----
+**技术栈：**
+- Python 3.10.19 (`/opt/homebrew/bin/python3.10`)
+- Crawl4AI 0.8.6（undetected 模式）
+- Playwright + Stealth
 
-## 二、SmartScout 详细结构
-
-### 2.1 核心文件
-
-| 文件/目录 | 说明 | 状态 |
-|----------|------|------|
-| main.py | 主程序入口 | 可执行 |
-| run.py | 运行脚本 | 可执行 |
-| start.sh | Shell 启动脚本 | 可执行 |
-| requirements.txt | Python 依赖 | 需检查 |
-
-### 2.2 核心模块
-
-| 目录 | 说明 |
-|------|------|
-| src/ | 源代码 |
-| api/ | API 接口封装 |
-| core/ | 核心逻辑 |
-| config/ | 配置 |
-| services/ | 服务 |
-| utils/ | 工具函数 |
-| scripts/ | 脚本 |
-| docs/ | 文档 |
-| frontend/ | 前端 |
-| electron/ | Electron 桌面端 |
-
-### 2.3 数据目录
-
-| 目录 | 说明 |
-|------|------|
-| data/ | 爬取数据 |
-| logs/ | 运行日志 |
-| venv/ | Python 虚拟环境 |
-
----
-
-## 三、可执行命令
-
-### 3.1 启动命令
-
+**可执行命令：**
 ```bash
-# 方式1: Shell 脚本
-cd ~/Desktop/爬虫工具/SmartScout/
-./start.sh
-
-# 方式2: 桌面快捷方式
-open ~/Desktop/爬虫工具/Start-SmartScout.command
-open ~/Desktop/爬虫工具/SmartScout.app
-
-# 方式3: Python 直接运行
-cd ~/Desktop/爬虫工具/SmartScout/
-python3 main.py
-python3 run.py
+# 运行爬虫
+cd ~/Desktop/爬虫工具/SmartScout/src
+/opt/homebrew/bin/python3.10 producer.py
 ```
 
-### 3.2 测试命令
+**当前状态：**
+- ✅ producer.py bug 已修复（page_num 初始化）
+- ✅ Crawl4AI 已安装
+- ✅ 已用于爬取 ccgp.gov.cn 和国企招标平台
 
+**输出：**
+- `intel/queue-ccgp.json`（95条）
+- `intel/queue-国企.json`（105条）
+
+---
+
+## 2. OpenCUA（视觉 AI 操作电脑）
+
+**位置：** `~/Desktop/OpenCUA/`
+
+**模型：**
+- OpenCUA-7B（15GB，已下载）
+- 位置：`~/Desktop/OpenCUA/models/OpenCUA-7B/`
+
+**依赖：**
+- transformers 4.53.0
+- torch 2.8.0（MPS GPU 加速）
+- PIL（截图功能）
+
+**可执行命令：**
 ```bash
-# 环境检查
-python3 check_environment.py
+# 测试截图
+cd ~/Desktop/OpenCUA
+python3 -c "from PIL import ImageGrab; img = ImageGrab.grab(); img.save('test.png')"
 
-# 运行测试
-python3 test_simple.py
-python3 test_api.py
-python3 run_test.py
+# 运行模型推理
+cd ~/Desktop/OpenCUA/model/inference
+python3 huggingface_inference.py
+```
+
+**当前状态：**
+- ✅ 项目已恢复
+- ✅ 模型已下载（15GB）
+- ✅ 截图功能正常
+- ⚠️ 视觉操作功能需要系统权限（屏幕录制授权）
+
+**用途：**
+- 理解屏幕截图
+- 输出 pyautogui 操作指令
+- 自动操作浏览器（需要配合实际执行）
+
+---
+
+## 3. 自动化收集器（公众号文章采集）
+
+**位置：** `~/Desktop/自动化收集器/`
+
+**功能：**
+- 公众号文章采集
+- OCR 处理（PaddleOCR）
+- 文章分析
+
+**可执行脚本：**
+```bash
+cd ~/Desktop/自动化收集器
+python3 run_5_sample.py        # 采集5篇样本
+python3 mp_monitor.py          # 公众号监控
+python3 sample_gongkongwang.py # 工控网样本采集
+```
+
+**当前状态：**
+- ✅ 项目存在
+- ⚠️ 未测试运行状态
+
+**输出目录：**
+- `test_output/`
+- `test_batch_output/`
+
+---
+
+## 4. Git 仓库（任务管理）
+
+**位置：** `~/.qclaw/workspace/jin-ai-workspace/`
+
+**关键文件：**
+- `TASKS.md` — 任务清单
+- `briefs/` — 任务说明
+- `intel/` — 爬取结果
+- `state/` — 状态通知
+
+**可执行命令：**
+```bash
+cd ~/.qclaw/workspace/jin-ai-workspace
+git pull
+git status
+git add -A && git commit -m "消息" && git push
 ```
 
 ---
 
-## 四、当前状态
+## 5. Gateway（钉钉连接器）
 
-### 4.1 最后运行时间
-- 最后运行：2026-03-23
-- 最后数据：extracted_items.json
+**位置：** `~/.qclaw/openclaw.json`
 
-### 4.2 已知问题
-- 爬取速度受限
-- 部分网站需要代理
-- 长时间运行可能有反爬问题
+**状态：**
+- ✅ 配置已写入（clientId + clientSecret）
+- ✅ Gateway 已重启
+- ⚠️ 待验证 Stream 连接是否正常
 
-### 4.3 依赖环境
-- Python 3.x
-- Selenium
-- Playwright
-- Chromium/Electron
-- Node.js (前端/桌面端)
+**测试命令：**
+```bash
+curl -s http://127.0.0.1:28789/health
+```
 
 ---
 
-## 五、输出位置
+## 总结
 
-- 爬取数据：`data/` 目录
-- 运行日志：`logs/` 目录
-- 结果文件：`scout_result.json`、`extracted_items.json`
+| 工具 | 状态 | 用途 |
+|------|------|------|
+| SmartScout | ✅ 可用 | 招标网站爬取 |
+| OpenCUA | ✅ 模型已下载 | 视觉 AI 操作 |
+| 自动化收集器 | ⚠️ 待测试 | 公众号采集 |
+| Git 仓库 | ✅ 正常 | 任务管理 |
+| Gateway | ⚠️ 待验证 | 钉钉连接 |
 
 ---
 
-**盘点完成**
+_金龙 | 2026-04-07_
